@@ -66,7 +66,7 @@ public class PostPagoMiMe extends PlanCelular {
         String cadena = String.format("Plan PostPagoMinutosMegas\n"
                 + "%s\t> Minutos : %d\n"
                 + "\t> Costo Minutos : %.2f$\n"
-                + "\t> Megas Expresados en Gigas: %d"
+                + "\t> Megas Expresados en Gigas: %d\n"
                 + "\t>Costo por cada Gigas: %.2f\n"
                 + "\t>Pago Mensuales: %.2f\n",
                 super.toString(),

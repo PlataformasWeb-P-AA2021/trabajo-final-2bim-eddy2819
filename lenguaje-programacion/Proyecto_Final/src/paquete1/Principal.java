@@ -23,6 +23,7 @@ public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Empresa Telefonica");
+        System.out.println("======================");
 
         int opcion;
         String nom = "";
@@ -31,16 +32,16 @@ public class Principal {
         String nombreArchivo = "PlanCelular.data";
         ArrayList<PlanCelular> plan = new ArrayList<>();
         do {
-            System.out.println("\nIngrese el numero de opcion a realizar\n"
-                    + "1.Plan PostPagoMinutos\n"
-                    + "2.Plan PostPagoMegas\n"
-                    + "3.Plan PostPagoMinutosMegas\n"
-                    + "4.Plan PostPagoMinutosMegasEconomico\n"
-                    + "5.Mostrar los planes:\n"
-                    + "6.Salir\n");
+            System.out.println("\n Ingrese el numero de opcion a realizar\n"
+                    + "\t>1.Plan PostPagoMinutos\n"
+                    + "\t>2.Plan PostPagoMegas\n"
+                    + "\t>3.Plan PostPagoMinutosMegas\n"
+                    + "\t>4.Plan PostPagoMinutosMegasEconomico\n"
+                    + "\t>5.Mostrar los planes:\n"
+                    + "\t>6.Salir\n");
             opcion = sc.nextInt();
             if (opcion < 5) {
-                System.out.println("====PRIPIETARIO====");
+                System.out.println("====PROPIETARIO====");
                 System.out.println("Ingrese su Nombre:");
                 nom = sc.nextLine();
                 sc.nextLine();
@@ -76,7 +77,7 @@ public class Principal {
                             mo, nu, mn, cs, mi, cmi);
                     PlanMinutos.establecerPagoMensual();
                     plan.add(PlanMinutos);
-                    //System.out.println(PlanMinutos);
+                   
                     break;
                 case 2:
                     System.out.println("====PLAN POST PAGO MEGAS ====");
@@ -111,10 +112,10 @@ public class Principal {
                     System.out.println("Ingrese Numero del Celular: ");
                     String nume = sc.nextLine();
                     System.out.println("Ingrese el numero de minutos"
-                            + "que consume");
+                            + " que consume");
                     int min = sc.nextInt();
                     System.out.println("Ingrese el costo de minutos de "
-                            + "su Plan");
+                            + " su Plan");
                     double costoMin = sc.nextDouble();
                     sc.nextLine();
                     System.out.println("Ingrese las megas expresado en Gigas");
@@ -141,10 +142,10 @@ public class Principal {
                     System.out.println("Ingrese Numero del Celular: ");
                     String nume2 = sc.nextLine();
                     System.out.println("Ingrese el numero de minutos"
-                            + "que consume");
+                            + " que consume");
                     int min2 = sc.nextInt();
                     System.out.println("Ingrese el costo de minutos de "
-                            + "su Plan");
+                            + " su Plan");
                     double costoMin2 = sc.nextDouble();
                     sc.nextLine();
                     System.out.println("Ingrese las megas expresado en Gigas");
@@ -161,11 +162,11 @@ public class Principal {
                             megas2, costo2, po);
                     PostPagoEco.establecerPagoMensual();
                     plan.add(PostPagoEco);
-                    //System.out.println();
-
+                    
                     break;
                 case 5:
-                    LecturaArchivoSecuencial lectura = new LecturaArchivoSecuencial(nombreArchivo);
+                    LecturaArchivoSecuencial lectura = 
+                            new LecturaArchivoSecuencial(nombreArchivo);
                     lectura.establecerListaPlan();
                     System.out.println(lectura);
                     break;
@@ -175,7 +176,8 @@ public class Principal {
                     System.out.println("Gracias Por preferirnos");
                     break;
             }
-            EscrituraArchivoSecuencial archivo = new EscrituraArchivoSecuencial(nombreArchivo);
+            EscrituraArchivoSecuencial archivo =
+                    new EscrituraArchivoSecuencial(nombreArchivo);
             for (int i = 0; i < plan.size(); i++) {
                 plan.get(i).establecerPagoMensual();
                 archivo.establecerRegistro(plan.get(i));

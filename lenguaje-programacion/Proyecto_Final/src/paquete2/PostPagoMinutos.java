@@ -13,7 +13,6 @@ import paquete1.PlanCelular;
  * @author DELL
  */
 public class PostPagoMinutos extends PlanCelular {
-
     private int minutoN;
     private double costoMN;
     private int minutoI;
@@ -22,7 +21,6 @@ public class PostPagoMinutos extends PlanCelular {
     public PostPagoMinutos(Persona p, String c, String m, String mo, String n,
             int mn, double cn, int mi, double ci) {
         super(p, c, m, mo, n);
-
         minutoN = mn;
         costoMN = cn;
         minutoI = mi;
@@ -68,7 +66,7 @@ public class PostPagoMinutos extends PlanCelular {
 
     @Override
     public String toString() {
-        String cadena = String.format("Plan PostPagoMinutos\n"
+        String cadena = String.format(" Plan PostPagoMinutos\n"
                 + "%s\t> Minutos Nacionales: %d\n"
                 + "\t> Costo Minutos Nacional: %.2f$\n"
                 + "\t> Minutos Internacionales: %d\n"

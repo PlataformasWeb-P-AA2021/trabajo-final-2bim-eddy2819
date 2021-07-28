@@ -59,13 +59,15 @@ public abstract class PlanCelular implements  Serializable {
         return modelo;
         
     }
+    
+    
     public double obtenerPagoMensual(){
         return pagoM;
     }
     
     @Override
     public String toString() {
-        String cadena = String.format("Plan Celular\n"
+        String cadena = String.format("TELEFONIA CELULAR\n"
                 + "\t> Propietario: \n"
                 + "Nombre: %s\n"
                 + "Apellido: %s\n"

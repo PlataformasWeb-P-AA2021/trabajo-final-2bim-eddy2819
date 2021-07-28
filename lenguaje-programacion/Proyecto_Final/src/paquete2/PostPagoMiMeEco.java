@@ -13,66 +13,74 @@ import paquete1.PlanCelular;
  * @author DELL
  */
 public class PostPagoMiMeEco extends PlanCelular {
-     private int minutos;
+
+    private int minutos;
     private double costoM;
     private int megasEG;
     private double costoG;
     private double porcentaje;
-    
-    public PostPagoMiMeEco(Persona p,String c,String m,String mo,String n
-            ,int mi, double cos, int meg, double cg, double po){
-        super(p,c,m,mo,n);
+
+    public PostPagoMiMeEco(Persona p, String c, String m, String mo, String n,
+             int mi, double cos, int meg, double cg, double po) {
+        super(p, c, m, mo, n);
         minutos = mi;
         costoM = cos;
         megasEG = meg;
         costoG = cg;
         porcentaje = po;
-        
+
     }
-    
-     public void establecerMinutos(int m){
+
+    public void establecerMinutos(int m) {
         minutos = m;
     }
-    public void establecerCostoMinutos(double c){
+
+    public void establecerCostoMinutos(double c) {
         costoM = c;
     }
-    public void establecerMegasGigas(int m){
+
+    public void establecerMegasGigas(int m) {
         megasEG = m;
     }
-    public void establecerCostoGigas(double c){
+
+    public void establecerCostoGigas(double c) {
         costoG = c;
     }
-    public void establecerPorcentaje(double p){
+
+    public void establecerPorcentaje(double p) {
         porcentaje = p;
     }
-    
-     public int  obtenerMinutos(){
+
+    public int obtenerMinutos() {
         return minutos;
     }
-    public double obtenerCostoMinutos(){
-         return costoM;
+
+    public double obtenerCostoMinutos() {
+        return costoM;
     }
-    public int obtenerMegasGigas(){
-        
+
+    public int obtenerMegasGigas() {
+
         return megasEG;
     }
-    public double obtenerCostoGigas(){
+
+    public double obtenerCostoGigas() {
         return costoG;
     }
-    public double obtenerPorcentaje(){
+
+    public double obtenerPorcentaje() {
         return porcentaje;
     }
-    
 
     @Override
     public void establecerPagoMensual() {
-        double prepago = (minutos * costoM) + (megasEG *costoG);
-        double descu = prepago *porcentaje;
-       this.pagoM = prepago - descu;
+        double prepago = (minutos * costoM) + (megasEG * costoG);
+        double descu = prepago * porcentaje;
+        this.pagoM = prepago - descu;
     }
-    
-     @Override
-     public String toString() {
+
+    @Override
+    public String toString() {
         String cadena = String.format("Plan PostPagoMinutosMegas\n"
                 + "%s\t> Minutos : %d\n"
                 + "\t> Costo Minutos : %.2f$\n"
@@ -81,11 +89,11 @@ public class PostPagoMiMeEco extends PlanCelular {
                 + "\t> Porcentaje de Descuento: %.2f\n"
                 + "\t>Pago Mensuales: %.2f\n",
                 super.toString(),
-                obtenerMinutos(),obtenerCostoMinutos(),obtenerMegasGigas(),
-                obtenerCostoGigas(),obtenerPorcentaje(),
+                obtenerMinutos(), obtenerCostoMinutos(), obtenerMegasGigas(),
+                obtenerCostoGigas(), obtenerPorcentaje(),
                 obtenerPagoMensual());
 
         return cadena;
     }
-    
+
 }
