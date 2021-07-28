@@ -41,14 +41,15 @@ public class Principal {
                     + "\t>6.Salir\n");
             opcion = sc.nextInt();
             if (opcion < 5) {
+                sc.nextLine();
                 System.out.println("====PROPIETARIO====");
                 System.out.println("Ingrese su Nombre:");
                 nom = sc.nextLine();
-                sc.nextLine();
                 System.out.println("Ingrese su Apellido: ");
                 ape = sc.nextLine();
                 System.out.println("Ingrese su Identificacion: ");
                 ide = sc.nextLine();
+                sc.nextLine();
             }
             Persona pe = new Persona(nom, ape, ide);
 
